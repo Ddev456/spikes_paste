@@ -4,9 +4,9 @@ import { Sidebar } from "@/components/Sidebar";
 
 export default function Home() {
   return (
-    <div className="h-screen">
+    <div className="h-screen flex flex-col">
       <Navbar />
-      <main className="h-full flex items-center">
+      <main className="flex flex-1 items-center overflow-hidden">
         <Sidebar />
         <Components />
       </main>

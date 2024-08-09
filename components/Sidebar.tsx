@@ -167,7 +167,7 @@ export const Sidebar = () => {
     },
   ];
   return (
-    <nav className="min-w-[280px] h-full flex flex-col p-8 gap-6 border-r border-t border-[#1D1D1D]">
+    <nav className="w-64 h-full overflow-auto flex flex-col p-8 gap-6 border-r border-t border-[#1D1D1D]">
       {sections.map((section, index) => (
         <div key={index}>
           <div className="flex items-center justify-between">
@@ -180,13 +180,44 @@ export const Sidebar = () => {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="px-6 gap-6 flex flex-col items-start justify-between">
+                  <div className="border-l border-[#1D1D1D] border-[#] px-6 gap-6 flex flex-col items-start justify-between">
                     {section.items.map((item, index) => (
                       <Link
                         href="#"
                         key={index}
                         className="flex gap-[10px] items-center"
                       >
+                        {item.title === "Hero" && (
+                          <span>
+                            <svg
+                              width="6"
+                              height="6"
+                              viewBox="0 0 6 6"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="3"
+                                cy="3"
+                                r="3"
+                                fill="url(#paint0_linear_0_164)"
+                              />
+                              <defs>
+                                <linearGradient
+                                  id="paint0_linear_0_164"
+                                  x1="3"
+                                  y1="0"
+                                  x2="3"
+                                  y2="6"
+                                  gradientUnits="userSpaceOnUse"
+                                >
+                                  <stop stop-color="#FF7A00" />
+                                  <stop offset="1" stop-color="#FF2900" />
+                                </linearGradient>
+                              </defs>
+                            </svg>
+                          </span>
+                        )}
                         <span>{item.icon}</span>
                         <p className="text-sm font-medium text-[#7E7F81]">
                           {item.title}
@@ -194,6 +225,16 @@ export const Sidebar = () => {
                       </Link>
                     ))}
                   </div>
+                  {section.showmore && (
+                    <Link
+                      href="#"
+                      className="py-4 flex gap-[10px] items-center"
+                    >
+                      <p className="text-sm font-medium text-[#7E7F81]">
+                        Show more +
+                      </p>
+                    </Link>
+                  )}
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
