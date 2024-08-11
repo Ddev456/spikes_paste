@@ -1,3 +1,5 @@
+'use client';
+
 import { Logo } from "@/app/assets/icons/Logo";
 import Link from "next/link";
 import { Searchbar } from "./Searchbar";
@@ -14,28 +16,31 @@ import {
 } from "@/components/ui/sheet"
 import { Menu } from "lucide-react";
 import { MobileLogo } from "@/app/assets/icons/MobileLogo";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
+  const activeLink = usePathname();
   const navItems = [
-    { name: "Library", href: "#" },
+    { name: "Library", href: "/library" },
     { name: "Extension", href: "#" },
     { name: "Community", href: "#" },
     { name: "Membership", href: "#" },
   ];
   return (
     <nav className="w-full flex items-center justify-between p-8 gap-8">
-      <div className="flex items-center">
+      <Link href="/" className="flex items-center">
         <Logo />
         <MobileLogo />
         <span className="sr-only ml-3 text-xl font-bold">Paste</span>
-      </div>
+      </Link>
       <Separator orientation="vertical" className="h-[24px] bg-[#1D1D1D]" />
       <div className="hidden lg:flex md:space-x-6">
         {navItems.map((item) => (
           <Link
             key={item.name}
             href={item.href}
-            className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            className={cn(item.href === activeLink ? "bg-[#1D1D1D]" : null ,"text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium")}
           >
             {item.name}
           </Link>
@@ -45,10 +50,17 @@ export const Navbar = () => {
         <SheetTrigger className="flex lg:hidden"><Menu className="h-6 w-6 stroke-white" /></SheetTrigger>
   <SheetContent>
     <SheetHeader>
-      <SheetTitle>Are you absolutely sure?</SheetTitle>
-      <SheetDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
+      <SheetTitle className="text-white">Navigation</SheetTitle>
+      <SheetDescription className="flex flex-col gap-2">
+      {navItems.map((item) => (
+          <Link
+            key={item.name}
+            href={item.href}
+            className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+          >
+            {item.name}
+          </Link>
+        ))}
       </SheetDescription>
     </SheetHeader>
   </SheetContent>

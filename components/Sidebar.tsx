@@ -167,7 +167,7 @@ export const Sidebar = () => {
     },
   ];
   return (
-    <nav className="hidden lg:w-64 h-full overflow-auto flex flex-col p-8 gap-6 border-r border-t border-[#1D1D1D]">
+    <nav className="hidden lg:flex w-64 h-full overflow-auto flex-col p-8 gap-6 border-r border-t border-[#1D1D1D]">
       {sections.map((section, index) => (
         <div key={index}>
           <div className="flex items-center justify-between">

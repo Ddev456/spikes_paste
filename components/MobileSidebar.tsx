@@ -165,7 +165,7 @@ export const MobileSidebar = () => {
       ];
     return (
 <Sheet>
-        <SheetTrigger><ChevronRight className="h-6 w-6 stroke-white" /></SheetTrigger>
+        <SheetTrigger className="lg:hidden flex"><ChevronRight className="h-6 w-6 stroke-white" /></SheetTrigger>
   <SheetContent side="left" className="h-[85%] mt-[15%] border-y-2 border-r-2 border-[#1D1D1D]">
   <nav className="w-64 h-full overflow-auto flex flex-col p-8 gap-6 border-[#1D1D1D]">
       {sections.map((section, index) => (

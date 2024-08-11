@@ -47,22 +47,22 @@ const CommandInput = React.forwardRef<
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-[#7E7F81] disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-white disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       {...props}
     />
-    <Badge className=" text-[#7E7F81] text-sm">
+    <Badge className="text-[#7E7F81] text-sm">
       <svg
         className="feather feather-command"
         fill="none"
-        height="18"
+        height="14"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"
         viewBox="0 0 24 24"
-        width="18"
+        width="14"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
