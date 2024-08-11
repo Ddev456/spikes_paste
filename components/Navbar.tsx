@@ -4,6 +4,17 @@ import { Searchbar } from "./Searchbar";
 import { Separator } from "./ui/separator";
 import { UserMenu } from "./UserMenu";
 
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { Menu } from "lucide-react";
+import { MobileLogo } from "@/app/assets/icons/MobileLogo";
+
 export const Navbar = () => {
   const navItems = [
     { name: "Library", href: "#" },
@@ -15,10 +26,11 @@ export const Navbar = () => {
     <nav className="w-full flex items-center justify-between p-8 gap-8">
       <div className="flex items-center">
         <Logo />
+        <MobileLogo />
         <span className="sr-only ml-3 text-xl font-bold">Paste</span>
       </div>
       <Separator orientation="vertical" className="h-[24px] bg-[#1D1D1D]" />
-      <div className="hidden md:flex md:space-x-6">
+      <div className="hidden lg:flex md:space-x-6">
         {navItems.map((item) => (
           <Link
             key={item.name}
@@ -29,6 +41,18 @@ export const Navbar = () => {
           </Link>
         ))}
       </div>
+        <Sheet>
+        <SheetTrigger className="flex lg:hidden"><Menu className="h-6 w-6 stroke-white" /></SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
       <Separator orientation="vertical" className="h-[24px] bg-[#1D1D1D]" />
       <Searchbar />
       <Separator orientation="vertical" className="h-[24px] bg-[#1D1D1D]" />

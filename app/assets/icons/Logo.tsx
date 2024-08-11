@@ -7,6 +7,7 @@ export const Logo = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      className="hidden md:block"
     >
       <rect y="0.5" width="96.8421" height="32" fill="url(#pattern0_0_253)" />
       <defs>

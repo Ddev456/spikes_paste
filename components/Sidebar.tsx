@@ -9,7 +9,7 @@ import { Webflow } from "@/app/assets/icons/Webflow";
 import { Figma } from "@/app/assets/icons/Figma";
 import Link from "next/link";
 
-interface Section {
+export interface Section {
   title: string;
   href: string;
   icon: React.ReactNode;
@@ -106,8 +106,8 @@ export const Sidebar = () => {
           <path
             d="M3 1V4M1.5 2.5L4.5 2.5M3 12V13.5M3 13.5V15M3 13.5H1.5M3 13.5H4.5M9 2L9.62285 3.55713C10.3198 5.29955 11.7005 6.68018 13.4429 7.37715L15 8L12.9147 9.04266C11.4921 9.75393 10.3611 10.9376 9.71514 12.3909L9 14L8.28486 12.3909C7.63892 10.9376 6.50786 9.75393 5.08533 9.04266L3 8L4.55713 7.37715C6.29955 6.68018 7.68018 5.29955 8.37715 3.55713L9 2Z"
             stroke="#7E7F81"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -154,7 +154,7 @@ export const Sidebar = () => {
           <path
             d="M8 2L10.1631 6.27934L15 6.96556L11.5 10.2966L12.3262 15L8 12.7793L3.67376 15L4.5 10.2966L1 6.96556L5.83688 6.27934L8 2Z"
             stroke="#7E7F81"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -167,7 +167,7 @@ export const Sidebar = () => {
     },
   ];
   return (
-    <nav className="w-64 h-full overflow-auto flex flex-col p-8 gap-6 border-r border-t border-[#1D1D1D]">
+    <nav className="hidden lg:w-64 h-full overflow-auto flex flex-col p-8 gap-6 border-r border-t border-[#1D1D1D]">
       {sections.map((section, index) => (
         <div key={index}>
           <div className="flex items-center justify-between">

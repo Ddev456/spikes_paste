@@ -12,7 +12,6 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
-import { Input } from "./ui/input";
 
 export const Searchbar = () => {
   const [open, setOpen] = useState(false);
@@ -32,6 +31,7 @@ export const Searchbar = () => {
     <>
       <Command>
         <CommandInput
+        className=""
           onClick={() => setOpen(true)}
           placeholder="Search for specific components, sections, wireframes, and more..."
         />

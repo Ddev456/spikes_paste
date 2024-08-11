@@ -63,7 +63,7 @@ export const Components = () => {
     },
   ];
   return (
-    <div className="flex flex-col h-full flex-1 overflow-auto bg-[#121212] border-t border-[#1D1D1D]  w-full gap-6 px-8 pt-8">
+    <div className="w-full flex flex-col h-full flex-1 overflow-auto bg-[#121212] border-t border-[#1D1D1D]  w-full gap-6 px-8 pt-8">
       <div className="flex flex-col gap-10">
         <div className="flex gap-20">
           <div className="flex gap-10 flex-col">

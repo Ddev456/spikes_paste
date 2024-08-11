@@ -58,9 +58,9 @@ const CommandInput = React.forwardRef<
         fill="none"
         height="18"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
         viewBox="0 0 24 24"
         width="18"
         xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +138,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "text-[#7E7F81] relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected='true']:bg-[#1B1B1B] data-[selected='true']:text-white data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50",
+      "text-[#7E7F81] relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected='true']:bg-[#1B1B1B] data-[selected='true']:text-white data-[disabled=true]:opacity-50",
       className
     )}
     {...props}
