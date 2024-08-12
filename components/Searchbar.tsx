@@ -12,6 +12,8 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
+import { navItems } from "./Navbar";
+import Link from "next/link";
 
 export const Searchbar = () => {
   const [open, setOpen] = useState(false);
@@ -40,10 +42,12 @@ export const Searchbar = () => {
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Suggestions">
-              <CommandItem>Calendar</CommandItem>
-              <CommandItem>Search Emoji</CommandItem>
-              <CommandItem>Calculator</CommandItem>
-            </CommandGroup>
+              { navItems.map(
+                (item) => (
+                  <CommandItem><Link className="w-full" href={item.href}>{item.name}</Link></CommandItem>
+                )
+              ) }
+              </CommandGroup>
           </CommandList>
         </CommandDialog>
       </Command>

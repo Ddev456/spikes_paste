@@ -1,3 +1,5 @@
+'use client';
+
 import { Eye } from "@/app/assets/icons/Eye";
 import { Button } from "./ui/button";
 import { Webflow } from "@/app/assets/icons/Webflow";
@@ -5,7 +7,16 @@ import { Figma } from "@/app/assets/icons/Figma";
 import { Separator } from "./ui/separator";
 import { ComponentCard } from "./ComponentCard";
 
+import { useToast } from "@/components/ui/use-toast"
+
 export const Components = () => {
+  const { toast } = useToast()
+  const handleCopyToClipboard = () => {
+    toast({
+      title: "Copied successfully !",
+      description: "Copied to clipboard",
+    })
+  }
   const components = [
     {
       id: 1,
@@ -83,11 +94,11 @@ export const Components = () => {
             </div>
             <div className="flex flex-col gap-4">
               <div className="flex gap-4 items-center w-full justify-between">
-                <Button className="w-full bg-[#1B1B1B] border border-[#292929] flex items-center px-2 py-1 gap-2">
+                <Button onClick={handleCopyToClipboard} className="w-full bg-[#1B1B1B] border border-[#292929] flex items-center px-2 py-1 gap-2">
                   <Webflow />
                   <span>Copy to Webflow</span>
                 </Button>
-                <Button className="w-full bg-[#1B1B1B] border border-[#292929] flex items-center px-2 gap-2">
+                <Button onClick={handleCopyToClipboard} className="w-full bg-[#1B1B1B] border border-[#292929] flex items-center px-2 gap-2">
                   <Figma />
                   <span>Copy to Figma</span>
                 </Button>

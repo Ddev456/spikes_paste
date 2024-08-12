@@ -19,14 +19,16 @@ import { MobileLogo } from "@/app/assets/icons/MobileLogo";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
+export const navItems = [
+  { name: "Library", href: "/library" },
+  { name: "Extension", href: "#" },
+  { name: "Community", href: "#" },
+  { name: "Membership", href: "#" },
+];
+
 export const Navbar = () => {
   const activeLink = usePathname();
-  const navItems = [
-    { name: "Library", href: "/library" },
-    { name: "Extension", href: "#" },
-    { name: "Community", href: "#" },
-    { name: "Membership", href: "#" },
-  ];
+
   return (
     <nav className="w-full flex items-center justify-between p-8 gap-8">
       <Link href="/" className="flex items-center">

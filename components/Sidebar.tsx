@@ -8,6 +8,7 @@ import {
 import { Webflow } from "@/app/assets/icons/Webflow";
 import { Figma } from "@/app/assets/icons/Figma";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export interface Section {
   title: string;
@@ -56,7 +57,7 @@ export const Sidebar = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_0_159)">
+          <g clipPath="url(#clip0_0_159)">
             <path
               d="M1 2.6C1 2.03995 1 1.75992 1.10899 1.54601C1.20487 1.35785 1.35785 1.20487 1.54601 1.10899C1.75992 1 2.03995 1 2.6 1H4.4C4.96005 1 5.24008 1 5.45399 1.10899C5.64215 1.20487 5.79513 1.35785 5.89101 1.54601C6 1.75992 6 2.03995 6 2.6V4.4C6 4.96005 6 5.24008 5.89101 5.45399C5.79513 5.64215 5.64215 5.79513 5.45399 5.89101C5.24008 6 4.96005 6 4.4 6H2.6C2.03995 6 1.75992 6 1.54601 5.89101C1.35785 5.79513 1.20487 5.64215 1.10899 5.45399C1 5.24008 1 4.96005 1 4.4V2.6Z"
               stroke="white"
@@ -171,7 +172,7 @@ export const Sidebar = () => {
       {sections.map((section, index) => (
         <div key={index}>
           <div className="flex items-center justify-between">
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible defaultValue={section.title === "Platform" || section.title === "Sections" ? section.title : undefined} className="w-full">
               <AccordionItem value={section.title}>
                 <AccordionTrigger>
                   <div className="flex font-medium uppercase items-center text-white gap-2">
@@ -185,7 +186,7 @@ export const Sidebar = () => {
                       <Link
                         href="#"
                         key={index}
-                        className="flex gap-[10px] items-center"
+                        className={("flex gap-[10px] items-center")}
                       >
                         {item.title === "Hero" && (
                           <span>
@@ -219,7 +220,7 @@ export const Sidebar = () => {
                           </span>
                         )}
                         <span>{item.icon}</span>
-                        <p className="text-sm font-medium text-[#7E7F81]">
+                        <p className={cn(item.title === "Webflow" ? "text-white" : "text-[#7E7F81]", "text-sm font-medium")}>
                           {item.title}
                         </p>
                       </Link>
