@@ -44,7 +44,7 @@ export const Searchbar = () => {
             <CommandGroup heading="Suggestions">
               { navItems.map(
                 (item) => (
-                  <CommandItem><Link className="w-full" href={item.href}>{item.name}</Link></CommandItem>
+                  <CommandItem key={item.name}><Link className="w-full" href={item.href}>{item.name}</Link></CommandItem>
                 )
               ) }
               </CommandGroup>
